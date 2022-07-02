@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ajax;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AjaxController extends Controller
 {
@@ -17,10 +18,17 @@ class AjaxController extends Controller
 
         // return $request->post();
         $model = new Ajax();
-        $model->name = $request->post('name');
-        $model->email = $request->post('email');
-        $model->save();
-        return ["result" => "data insert"];
+        DB::table('ajaxes')->insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // $model->name = $request->post('name');
+        // $model->email = $request->post('email');
+        // $model->save();
+        // return ["result" => "data insert"];
     }
     public function index()
     {

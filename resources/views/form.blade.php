@@ -1,3 +1,24 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  }
+  *,
+  *::before,
+  *::after {
+  box-sizing: border-box;
+  }
+  body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+</style>
+
+
 <form id="frm">
     <table>
 
@@ -16,7 +37,6 @@
       </tr>
 
       <tr>
-        <td>name</td>
         <td>
           <input type="submit" name="submit" id="btn" />
         </td>
